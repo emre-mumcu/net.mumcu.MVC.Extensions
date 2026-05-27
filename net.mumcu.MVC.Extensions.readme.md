@@ -73,15 +73,19 @@ git push -u origin main
         <PackageProjectUrl>https://emre-mumcu.github.io</PackageProjectUrl>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageIcon>net.mumcu.png</PackageIcon>
+        <!-- silindi -->
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <EnableDefaultContentItems>false</EnableDefaultContentItems>
         <NoDefaultExcludes>true</NoDefaultExcludes>
+        <!-- -->
     </PropertyGroup>
 
     <ItemGroup>
+        <!-- silindi -->
         <Content Include="**\**" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**" />
         <Content Remove=".gitignore; .gitattributes; editorconfig;" />
+        <!-- -->
         <None Include="net.mumcu.png" Pack="true" PackagePath="\" />
         <None Include="readme.md" Pack="true" PackagePath="\" />
     </ItemGroup>

@@ -13,7 +13,7 @@
     <PropertyGroup>
         <!-- <PackageType>Template</PackageType> -->
         <PackageId>net.mumcu.MVC.Extensions</PackageId>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <TargetFramework>net10.0</TargetFramework>
         <IsPackable>true</IsPackable>
         <Title>net.mumcu.MVC.Extensions</Title>
@@ -27,15 +27,9 @@
         <PackageProjectUrl>https://emre-mumcu.github.io</PackageProjectUrl>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageIcon>net.mumcu.png</PackageIcon>
-        <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <EnableDefaultContentItems>false</EnableDefaultContentItems>
-        <NoDefaultExcludes>true</NoDefaultExcludes>
     </PropertyGroup>
 
-    <ItemGroup>
-        <Content Include="**\**" Exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**" />
-        <Content Remove=".gitignore; .gitattributes; editorconfig;" />
+    <ItemGroup>        
         <None Include="net.mumcu.png" Pack="true" PackagePath="\" />
         <None Include="readme.md" Pack="true" PackagePath="\" />
     </ItemGroup>
