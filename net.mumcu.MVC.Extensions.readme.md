@@ -94,5 +94,6 @@ git push -u origin main
 ```
 
 ```powershell
+dotnet nuget locals all --clear
 dotnet pack -c Release
 ```

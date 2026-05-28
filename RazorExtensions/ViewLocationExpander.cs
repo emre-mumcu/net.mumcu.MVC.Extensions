@@ -5,12 +5,12 @@ namespace net.mumcu.MVC.Extensions.RazorExtensions;
 
 public static class ViewLocationExpanderExtension
 {
-    public static IServiceCollection _AddCustomViewLocations(this IServiceCollection services)
+    public static IServiceCollection _AddCustomViewLocations(this IServiceCollection services, IEnumerable<string>? viewLocations = null)
     {
         services
             .Configure<RazorViewEngineOptions>(options =>
             {
-                options.ViewLocationExpanders.Add(new ViewLocationExpander());
+                options.ViewLocationExpanders.Add(new ViewLocationExpander(viewLocations));
             });
 
         return services;
@@ -27,13 +27,11 @@ public class ViewLocationExpander : IViewLocationExpander
         "/Partials/Shared/{0}" + RazorViewEngine.ViewExtension,
     };
 
-    #region Optional Constructor to get values at the time of registration
+    #region Optional Constructor to get values at the time of registration    
 
-    public ViewLocationExpander() { }
-
-    public ViewLocationExpander(IEnumerable<string> customLocations)
+    public ViewLocationExpander(IEnumerable<string>? customLocations = null)
     {
-        _customLocations = customLocations;
+        if(customLocations is not null) _customLocations = customLocations;
     }
 
     #endregion
@@ -52,7 +50,6 @@ public class ViewLocationExpander : IViewLocationExpander
         return allviewLocations;
     }
 }
-
 
 /*
     Add Custom View Locations
